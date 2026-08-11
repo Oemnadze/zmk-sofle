@@ -122,6 +122,8 @@
         };
     };
 
+    // I/O на NAV-слоях = скриншот целиком/области, mac и linux версии.
+
     combos {
         compatible = "zmk,combos";
         
@@ -182,10 +184,10 @@
             display-name = "N-MAC";
             bindings = <
 &trans       &trans        &trans        &trans            &trans     &trans     &mmv MOVE_UP     &trans     &trans     &trans     &trans        &trans       &trans
-&trans       &kp LG(UP)    &kp LA(RIGHT) &trans            &trans     &trans     &mmv MOVE_DOWN   &trans     &kp PG_UP  &trans     &trans        &trans       &trans
+&trans       &kp LG(UP)    &kp LA(RIGHT) &trans            &trans     &trans     &mmv MOVE_DOWN   &trans     &kp PG_UP  &screenshot_full_mac &screenshot_area_mac &trans       &trans
 &trans       &kp LG(LEFT)  &trans        &kp PG_DN         &trans     &kp LG(DOWN) &mmv MOVE_LEFT &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT     &kp LG(RIGHT) &trans
 &trans       &trans        &kp DEL       &trans            &trans     &kp LA(LEFT) &mmv MOVE_RIGHT &trans     &trans     &trans     &trans        &trans       &trans
-&trans       &trans        &trans        &trans            &trans     &mkp LCLK  &mkp LCLK        &trans     &trans     &trans     &trans        &trans
+&trans       &trans        &trans        &trans            &trans     &mkp LCLK  &mkp RCLK        &trans     &trans     &trans     &trans        &trans
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -216,10 +218,10 @@
             display-name = "N-LIN";
             bindings = <
 &trans       &trans        &trans        &trans            &trans     &trans     &mmv MOVE_UP     &trans     &trans     &trans     &trans        &trans       &trans
-&trans       &kp LC(HOME)  &kp LC(RIGHT) &trans            &trans     &trans     &mmv MOVE_DOWN   &trans     &kp PG_UP  &trans     &trans        &trans       &trans
+&trans       &kp LC(HOME)  &kp LC(RIGHT) &trans            &trans     &trans     &mmv MOVE_DOWN   &trans     &kp PG_UP  &kp PSCRN  &kp LS(PSCRN) &trans       &trans
 &trans       &kp HOME      &trans        &kp PG_DN         &trans     &kp LC(END) &mmv MOVE_LEFT  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT     &kp END      &trans
 &trans       &trans        &kp DEL       &trans            &trans     &kp LC(LEFT) &mmv MOVE_RIGHT &trans     &trans     &trans     &trans        &trans       &trans
-&trans       &trans        &trans        &trans            &trans     &mkp LCLK  &mkp LCLK        &trans     &trans     &trans     &trans        &trans
+&trans       &trans        &trans        &trans            &trans     &mkp LCLK  &mkp RCLK        &trans     &trans     &trans     &trans        &trans
             >;
             sensor-bindings = <&scroll_encoder>;
         };
