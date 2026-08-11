@@ -13,6 +13,7 @@
 #define L_VIM_LIN    4
 #define L_GAME       5
 #define L_ADJUST     6
+#define L_NUMPAD     7
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -243,8 +244,19 @@
 &trans       &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans           &rgb_ug RGB_EFF &rgb_ug RGB_EFR &bt BT_CLR      &bt BT_CLR_ALL  &out OUT_USB    &out OUT_BLE
 &trans       &rgb_ug RGB_TOG &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_ON  &rgb_ug RGB_OFF &trans           &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &trans          &trans
 &trans       &bl BL_TOG      &bl BL_INC      &bl BL_DEC      &bl BL_ON       &bl BL_OFF      &trans           &ext_power EP_TOG &ext_power EP_ON &ext_power EP_OFF &trans        &trans          &soft_off
-&trans       &trans          &trans          &trans          &caps_word      &kp CAPS        &trans           &trans          &trans          &trans          &trans          &trans          &trans
+&trans       &trans          &trans          &trans          &caps_word      &kp CAPS        &trans           &tog L_NUMPAD   &trans          &trans          &trans          &trans          &trans
 &trans       &trans          &trans          &trans          &trans          &trans          &trans           &trans          &trans          &trans          &trans          &trans
+            >;
+        };
+
+        layer_numpad {
+            display-name = "NUM";
+            bindings = <
+&trans       &trans        &trans        &trans            &trans     &trans     &trans           &trans     &trans     &trans     &trans        &trans       &trans
+&trans       &trans        &trans        &trans            &trans     &trans     &trans           &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MULTIPLY &trans
+&trans       &trans        &trans        &trans            &trans     &trans     &trans           &kp KP_MINUS  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS     &trans
+&trans       &trans        &trans        &trans            &trans     &trans     &trans           &kp KP_N1     &kp KP_N2 &kp KP_N3 &kp KP_N0  &kp KP_DOT      &kp KP_ENTER
+&trans       &trans        &trans        &trans            &trans     &trans     &trans           &trans     &trans     &trans     &trans        &trans
             >;
         };
     };
